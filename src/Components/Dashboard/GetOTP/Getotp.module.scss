@@ -1,0 +1,39 @@
+.getotp_Container {
+    display: flex;
+}
+
+.heroimg {
+    height: 100vh;
+    width: 70%;
+    background-color: rgb(114, 217, 251);
+}
+
+.otpSection {
+    box-sizing: border-box;
+    width: calc(100% - 70%);
+    padding: 4rem 3rem;
+}
+
+.secOtpElem {
+    display: flex;
+    align-items: center;
+    h3{
+        margin: 3rem 0;
+    }
+}
+.goggleBtn{
+    border-radius: .2rem;
+    background-color: black;
+    color: rgb(241, 223, 223);
+    align-items: center;
+    margin: auto;
+    margin-top: 2rem;
+}
+
+.optFotter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    bottom: -50%;
+}
