@@ -1,5 +1,6 @@
 .sidebarMain {
     background-color: black;
+    position: relative;
     padding-left: .3rem;
     width: 15rem;
     height: 100vh;
@@ -35,8 +36,9 @@
 
 
 .sidebarFotter {
-    position: relative;
-    bottom: -25%;
+    position: absolute;
+    bottom: 0%;
+    width: 90%;
     border-top: 1px solid grey;
     padding: .5rem;
     color: grey;

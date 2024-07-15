@@ -19,16 +19,21 @@ const Getotp = () => {
                     <span>&#128075;</span>
                 </div>
                 <div className={styles.secOtpElem}>
-                  <Box>
-                  <TextField variant="filled" />
+                    <div style={{width:'100%'}}>
+                        <TextField variant="filled" />
 
-                  </Box>
+                    </div>
                 </div>
                 <div className={styles.secOtpElem}>
                     <Checkbox disabled checked />
-                    <Typography variant="body2">By continuing, you agree to our <Link href="#">Privacy Policy </Link>and <Link href="#">T&C</Link>s.</Typography>
+                    <Typography variant="body2">
+                        By continuing, you agree to our
+                        <Link href="#">Privacy Policy </Link>
+                        and
+                        <Link href="#">T&Cs</Link>.
+                    </Typography>
                 </div>
-                <Divider/>
+                <Divider />
                 <button className={`${styles.secOtpElem} ${styles.goggleBtn}`}>
                     <i><GoogleIcon /></i>
                     <Typography variant="body2">or Sign in with Goggle</Typography>
