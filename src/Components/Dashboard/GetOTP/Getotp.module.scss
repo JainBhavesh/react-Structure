@@ -5,35 +5,36 @@
 .heroimg {
     height: 100vh;
     width: 70%;
-    background-color: rgb(114, 217, 251);
 }
 
 .otpSection {
     box-sizing: border-box;
     width: calc(100% - 70%);
-    padding: 4rem 3rem;
+    padding: 5rem 3rem;
+    position: relative;
 }
 
 .secOtpElem {
     display: flex;
     align-items: center;
-    h3{
-        margin: 3rem 0;
-    }
+    margin: 1rem;
+    h4{}
 }
-.goggleBtn{
+
+.goggleBtn {
     border-radius: .2rem;
+    width: 90%;
     background-color: black;
     color: rgb(241, 223, 223);
-    align-items: center;
-    margin: auto;
-    margin-top: 2rem;
+    margin-top: 1rem;
+    justify-content: center;
 }
 
 .optFotter {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
-    bottom: -50%;
+    position: absolute;
+    bottom: 0%;
+    width: 80%;
 }

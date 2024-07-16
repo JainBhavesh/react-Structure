@@ -9,11 +9,7 @@ import OTPInput from './OTPInput';
 
 
 export const OtpVerify: React.FC = () => {
-  const handleVerify = () => {
-    
-    console.log('Verifying OTP...');
-  };
-
+  
   return (
     <Box  className={styles.otp_page}>
       
@@ -40,7 +36,7 @@ export const OtpVerify: React.FC = () => {
 
         <OTPInput />
         <div className={styles.button}>
-        <CommonButton label='Verify'  onClick={handleVerify}/>
+        <CommonButton label='Verify' />
         </div>
         <div className={styles.small_texts}>
                   <h4>Resend OTP in 00:16 seconds</h4>

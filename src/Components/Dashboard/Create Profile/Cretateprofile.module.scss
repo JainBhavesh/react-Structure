@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+}
+
+.profileMain {
+    width: calc(100% - 15rem);
+    padding: 1rem;
+    float: right;
+    height: calc(100vh - 5rem);
+    background-color: rgb(28, 27, 27);
+}
+
+.profileContent {
+    margin: auto;
+    background-color: white;
+    width: 28rem;
+    height: 38rem;
+    border-radius: .5rem;
+    padding: 2rem;
+}
+.profileHead{
+    text-align: center;
+    color: #1976d2;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+.profileElem{
+    margin: .3rem;
+}
+.profilepic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.uploadBtn {
+    border-radius: 1rem !important;
+    height: 1.5rem !important;
+    margin-top: 1rem !important;
+}
+.profileInput{
+    width: 100% !important;
+
+}
