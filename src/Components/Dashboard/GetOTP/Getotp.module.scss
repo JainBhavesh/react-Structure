@@ -2,9 +2,14 @@
     display: flex;
 }
 
-.heroimg {
+.imgContainer {
     height: 100vh;
     width: 70%;
+}
+
+.heroimg {
+    width: 100%;
+    height: 100%;
 }
 
 .otpSection {
@@ -17,13 +22,16 @@
 .secOtpElem {
     display: flex;
     align-items: center;
-    margin: 1rem;
-    h4{}
+    margin: 1rem 0;
+
+    h4 {
+        margin: .5rem 0;
+    }
 }
 
 .goggleBtn {
     border-radius: .2rem;
-    width: 90%;
+    width: 100%;
     background-color: black;
     color: rgb(241, 223, 223);
     margin-top: 1rem;

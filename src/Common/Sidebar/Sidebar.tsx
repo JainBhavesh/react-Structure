@@ -1,32 +1,38 @@
 import { Avatar, Box, ListItemIcon, Stack, Typography } from '@mui/material';
 import { SidebarData } from './SidebarData';
-import Styles from './sidebar.module.scss'
+import styles from './sidebar.module.scss'
 import WestIcon from '@mui/icons-material/West';
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
+import { AppName } from '../AppName/AppName';
 
-const Sidebar = () => {
+interface sidebarProps {
+    toggleDrawer: () => void;
+    open: boolean;
+}
+
+const Sidebar: React.FC<sidebarProps> = ({ open, toggleDrawer }) => {
     return (
-        <Box className={Styles.sidebarMain}>
-            <div className={Styles.siderhead}>
-                <p >PLAYPICKUP.APP</p>
-                <i><WestIcon /></i>
+        <Box className={`${styles.sidebarMain} ${open ? styles.open : ""}`}>
+            <div className={styles.siderhead}>
+                <AppName />
+                <i onClick={toggleDrawer}><WestIcon /></i>
             </div>
             {SidebarData.data.map((mainMenu, index) => (
                 <>
-                    <Box className={Styles.diffSection} key={index}>
+                    <Box className={styles.diffSection} key={index}>
                         <Typography
                             variant='body2'
-                            className={Styles.menuItem}>
+                            className={styles.menuItem}>
                             {mainMenu.main}
                         </Typography>
                         {mainMenu.subItems.map((submenu, subIndex) => (
-                            <div key={subIndex} className={Styles.subMenuItem}>
+                            <div key={subIndex} className={styles.subMenuItem}>
                                 <ListItemIcon
                                     sx={{ color: 'grey' }}>
                                     <submenu.icon />
                                     <Typography
                                         variant='body1'
-                                        className={Styles.menuItem}>
+                                        className={styles.menuItem}>
                                         {submenu.name}
                                     </Typography>
                                 </ListItemIcon>
@@ -35,9 +41,9 @@ const Sidebar = () => {
                     </Box>
                 </>
             ))}
-            <div className={Styles.sidebarFotter}>
-                <div  className={Styles.player}>
-                    <Stack sx={{paddingRight:'.2rem'}}>
+            <div className={styles.sidebarFotter}>
+                <div className={styles.player}>
+                    <Stack sx={{ paddingRight: '.2rem' }}>
                         <Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
                     </Stack>
                     <div>

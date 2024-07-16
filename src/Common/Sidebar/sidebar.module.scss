@@ -1,6 +1,4 @@
-*{
-    box-sizing: border-box;
-}
+
 .sidebarMain {
     background-color: black;
     position: fixed;
@@ -22,6 +20,7 @@
 .menuItem {
     color: grey;
     padding: .2rem .5rem;
+   
 }
 
 .subMenuItem {
@@ -30,20 +29,14 @@
 
 .diffSection {
     padding: 1rem 0rem;
-    // border-bottom: 1px solid grey;
-    // :last-child{
-    //     border-bottom: none;
-    // }
 }
-
-
 
 .sidebarFotter {
     position: absolute;
     bottom: 0%;
-    width: 90%;
+    width: 98%;
     border-top: 1px solid grey;
-    padding: .5rem;
+    padding: 1rem;
     color: grey;
     display: flex;
     align-items: center;
@@ -53,3 +46,12 @@
     display: flex;
     align-self: center;
 }
+
+// @media(max-width:990px){
+  
+//     .open {
+//         right: -15rem;
+//         transition: all 0.2s;
+//     }
+    
+// }
