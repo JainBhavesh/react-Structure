@@ -1,6 +1,9 @@
+*{
+    box-sizing: border-box;
+}
 .sidebarMain {
     background-color: black;
-    position: relative;
+    position: fixed;
     padding-left: .3rem;
     width: 15rem;
     height: 100vh;
@@ -18,7 +21,7 @@
 
 .menuItem {
     color: grey;
-    padding: .2rem 0rem;
+    padding: .2rem .5rem;
 }
 
 .subMenuItem {

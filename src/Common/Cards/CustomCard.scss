@@ -1,0 +1,56 @@
+.custom-card {
+    max-width: 345px;
+    margin: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+    .header {
+        background-color: #D1FFBD;
+        padding: 16px;
+        color: black;
+        display: flex;
+        flex-direction: column;
+        margin: 15px;
+        border-radius: 15px;
+
+        .title {
+            margin: 0;
+            font-size: 1.0em;
+            font-weight: bolder;
+        }
+
+        .title1 {
+            margin: 0;
+            font-size: 1.0em;
+            font-weight: bolder;
+            color: blue;
+            cursor: pointer;
+        }
+
+        .tick-icon {
+            margin-left: 240px;
+            justify-content: flex-end;
+            display: flex;
+            color: green;
+        }
+    }
+
+    .content {
+        padding: 16px;
+    }
+
+    .MuiCardActions-root {
+        display: flex;
+        justify-content: space-around;
+
+        .custom-button {
+            flex: 1;
+            text-transform: capitalize;
+            width: 100%;
+        }
+    }
+}
