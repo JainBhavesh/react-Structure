@@ -5,7 +5,10 @@ import { Login } from "../Login/Login";
 import { CommonButton } from "../../Common/Button/CommonButton";
 import {CommonCard} from "../../Common/Cards/CommonCard";
 import { RouteErrorPage } from "../../Common/RouteErrorPage/RouteErrorPage";
-import { OtpVerify } from "../Dashboard/OtpVerify";
+import { OtpVerify } from "../Dashboard/OtpVerification/OtpVerify";
+import { PickUpForm } from "../../Common/PickupMatchForm/PickUpForm";
+import Sidebar from "../../Common/Sidebar/Sidebar";
+import Getotp from "../Dashboard/GetOTP/Getotp";
 
 const AppRoutes = () => {
   const handleEdit = () => {
@@ -35,7 +38,10 @@ const AppRoutes = () => {
             />
           }  />
           <Route path="/otpverify" element={<OtpVerify />} />
-        
+          <Route path="sidebar" Component={() => <Sidebar />} />
+          <Route path="getotp" Component={() => <Getotp />} />
+          <Route path="/pickupform" Component={() => <PickUpForm />} />
+          
         <Route
           path="/dashboard"
           Component={() => (
