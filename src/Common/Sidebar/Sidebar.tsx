@@ -27,9 +27,8 @@ const Sidebar: React.FC<sidebarProps> = ({ open, toggleDrawer }) => {
                         </Typography>
                         {mainMenu.subItems.map((submenu, subIndex) => (
                             <div key={subIndex} className={styles.subMenuItem}>
-                                <ListItemIcon
-                                    sx={{ color: 'grey' }} >
-                                    <submenu.icon  />
+                                <ListItemIcon sx={{ color: 'grey' }} >
+                                   <submenu.icon   />
                                     <Typography
                                         variant='body1'
                                         className={styles.menuItem}>

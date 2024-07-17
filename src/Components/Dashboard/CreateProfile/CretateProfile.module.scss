@@ -6,7 +6,7 @@
     width: calc(100% - 15rem);
     padding: 1rem;
     float: right;
-    height: calc(100vh - 5rem);
+    height:auto;
     background-color: rgb(28, 27, 27);
 }
 
@@ -14,9 +14,10 @@
     margin: auto;
     background-color: white;
     width: 28rem;
-    height: 38rem;
+    height: 39rem;
     border-radius: .5rem;
-    padding: 2rem;
+    padding: 1rem 2rem;
+    border-top: .5rem solid #1976d2;
 }
 
 .profileHead {

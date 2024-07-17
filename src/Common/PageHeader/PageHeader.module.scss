@@ -1,4 +1,6 @@
-
+*{
+    box-sizing: border-box;
+}
 .pageheader{
     width: calc(100% - 15rem);
     float: right;

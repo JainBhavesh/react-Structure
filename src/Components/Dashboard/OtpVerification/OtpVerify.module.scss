@@ -25,15 +25,13 @@
   display: flex;
   align-items: center;
   margin: 1rem 0;
-
-  h4 {
-    margin: .5rem 0;
-  }
+ 
 }
 
 .small_text {
-  margin-left: 6rem;
   font-size: 10px;
+  display: flex;
+  justify-content: flex-end;
 }
 
 
@@ -49,47 +47,66 @@
   bottom: 0%;
   width: 80%;
 }
+//Input otp
+.otpInput{
+  display: flex;
+  gap:2%;
+  align-items: center;
+}
 
 
 @media(max-width:990px) {
   .otpSection {
-      padding: 3rem 1rem;
+    padding: 3rem 1rem;
   }
+
   .optFotter {
-      width: 90%;
-      p{
-          font-size: 10px;
-      }
+    width: 90%;
+
+    p {
+      font-size: 10px;
+    }
+  }
+  .small_text {
+   display: block;
+  }
+  .otpInput{
+    gap: 5px;
   }
 }
 
 @media(max-width:768px) {
   .otpSection {
-      padding: 3rem .5rem;
+    padding: 3rem .5rem;
   }
+
   .imgContainer {
-      width: 60%;
+    width: 60%;
   }
-  
+
   .otpSection {
-      width: 40%;
+    width: 40%;
   }
+
   .optFotter {
-      width: 95%;
-     
+    width: 95%;
   }
 
 }
 
 @media(max-width:575px) {
   .imgContainer {
-      display: none;
-      
+    display: none;
   }
+
   .otpSection {
-     width: 100%;
-     padding: 5rem 5rem;
+    width: 100%;
+    padding: 5rem 5rem;
   }
-  
+  .optFotter {
+    width: 70%;
+  }
+
+
 
 }

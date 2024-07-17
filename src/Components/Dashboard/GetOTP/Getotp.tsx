@@ -21,7 +21,7 @@ const GetOtp = () => {
                     <AppName />
                 </div>
                 <div className={styles.secOtpElem}>
-                    <h4>Nice To See You</h4>
+                    <h3>Nice To See You</h3>
                     <span>&#128075;</span>
                 </div>
                 <div >
@@ -49,7 +49,6 @@ const GetOtp = () => {
                     </Typography>
                 </div>
                 <div className={styles.secOtpElem}>
-
                     <CommonButton label="Get OTP" />
                 </div>
                 <hr />

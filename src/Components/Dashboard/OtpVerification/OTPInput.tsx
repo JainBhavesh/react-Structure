@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Input as BaseInput } from '@mui/base/Input';
+import styles from './OtpVerify.module.scss'
 import { Box, styled } from '@mui/system';
 
 function OTP({
@@ -144,7 +145,7 @@ function OTP({
   };
 
   return (
-    <Box sx={{ display: 'flex', gap: 1, alignItems: 'center', margin: '0rem 3rem 2rem' }}>
+    <Box className={styles.otpInput} >
       {new Array(length).fill(null).map((_, index) => (
         <React.Fragment key={index}>
           <BaseInput

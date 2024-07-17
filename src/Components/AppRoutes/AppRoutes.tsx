@@ -43,17 +43,7 @@ const AppRoutes = () => {
           <Route path="/otpverify" element={<OtpVerify />} />
           <Route path="/createprofile" element={<CreateProfile />} />
           <Route path="/pickupform" Component={() => <PickUpForm />} />
-          {/* <Route path="/commoncard" element={
-            <CommonCard
-              sport=" Pickleball"
-              format=" 1v1"
-              location=" http://example.com"
-              datetime=" 23/8/2024 | 08.00pm"
-              skillLevel=" Beginner"
-              onEdit={handleEdit}
-              onSend={handleSend}
-            />
-          } /> */}
+
 
           <Route
             path="/dashboard"
