@@ -9,6 +9,8 @@ import { OtpVerify } from "../Dashboard/OtpVerification/OtpVerify";
 import { PickUpForm } from "../../Common/PickupMatchForm/PickUpForm";
 import Sidebar from "../../Common/Sidebar/Sidebar";
 import Getotp from "../Dashboard/GetOTP/Getotp";
+import CreateProfile from "../Dashboard/Create Profile/Cretateprofile";
+import SubscriptionCard from "../Dashboard/SubscriptionCard/SubscriptionCard";
 
 const AppRoutes = () => {
   const handleEdit = () => {
@@ -40,6 +42,8 @@ const AppRoutes = () => {
           <Route path="sidebar" Component={() => <Sidebar />} />
           <Route path="getotp" Component={() => <Getotp />} />
           <Route path="/pickupform" Component={() => <PickUpForm />} />
+          <Route path="/subscription" Component={() => <SubscriptionCard />} />
+
           
         <Route
           path="/dashboard"
