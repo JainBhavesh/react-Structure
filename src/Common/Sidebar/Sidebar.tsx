@@ -15,7 +15,7 @@ const Sidebar: React.FC<sidebarProps> = ({ open, toggleDrawer }) => {
         <Box className={`${styles.sidebarMain} ${open ? styles.open : ""}`}>
             <div className={styles.siderhead}>
                 <AppName />
-                <i onClick={toggleDrawer}><WestIcon /></i>
+                <i className={styles.arrowIcon} onClick={toggleDrawer}><WestIcon /></i>
             </div>
             {SidebarData.data.map((mainMenu, index) => (
                 <>
@@ -28,8 +28,8 @@ const Sidebar: React.FC<sidebarProps> = ({ open, toggleDrawer }) => {
                         {mainMenu.subItems.map((submenu, subIndex) => (
                             <div key={subIndex} className={styles.subMenuItem}>
                                 <ListItemIcon
-                                    sx={{ color: 'grey' }}>
-                                    <submenu.icon />
+                                    sx={{ color: 'grey' }} >
+                                    <submenu.icon  />
                                     <Typography
                                         variant='body1'
                                         className={styles.menuItem}>
@@ -43,7 +43,7 @@ const Sidebar: React.FC<sidebarProps> = ({ open, toggleDrawer }) => {
             ))}
             <div className={styles.sidebarFotter}>
                 <div className={styles.player}>
-                    <Stack sx={{ paddingRight: '.2rem' }}>
+                    <Stack sx={{ paddingRight: '.5rem' }}>
                         <Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
                     </Stack>
                     <div>

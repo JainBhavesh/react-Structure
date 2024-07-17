@@ -57,7 +57,7 @@ const GetOtp = () => {
                     <i><GoogleIcon /></i>
                     <Typography
                         variant="body2"
-                    >or Sign in with Goggle
+                    > or Sign in with Goggle
                     </Typography>
                 </button>
 
@@ -65,7 +65,7 @@ const GetOtp = () => {
                     <AppName />
                     <Typography
                         variant="body2">
-                        &copy; Login
+                        &copy; Login 2024
                     </Typography>
                 </div>
             </div>

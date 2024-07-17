@@ -40,5 +40,51 @@
     border-radius: 1rem !important;
     height: 1.5rem !important;
     margin-top: 1rem !important;
+    background-color:rgba(25, 118, 210,.1) !important;
+    text-transform: capitalize !important;
 }
 
+.buttonsContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.buttonWrapper {
+    position: relative;
+    margin: 5px;
+}
+
+.button {
+    padding: 10px 20px;
+    border: 2px solid gray;
+    background: none;
+    color: gray;
+    cursor: pointer;
+    border-radius: .3rem;
+    transition: all 0.3s ease;
+}
+
+.activeButton {
+    border-color: #1976d2;
+    color: #1976d2;
+    background-color:rgba(25, 118, 210,.1);
+}
+
+.tickIcon {
+    position: absolute;
+    top: -7px;
+    right: -7px;
+    color: white;
+    background-color: green;
+    border-radius: 50%;
+}
+
+.active .tickIcon {
+    display: block;
+}
+
+@media (max-width:990px) {
+    .profileMain {
+        width: 100%;
+    }
+}
