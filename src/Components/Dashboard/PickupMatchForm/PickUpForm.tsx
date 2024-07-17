@@ -1,55 +1,56 @@
 import React, { useState } from 'react';
-import { CommonCard } from '../Cards/CommonCard';
+import { CommonCard } from '../../../Common/Cards/CommonCard';
 import styles from './PickUp.module.scss';
-import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import { CommonButton } from '../Button/CommonButton';
+import { CommonButton } from '../../../Common/Button/CommonButton';
 import CheckIcon from '@mui/icons-material/Check';
+import DatePicker from 'react-datepicker';
 
+const level=['Never played before', 'Beginner', 'InterMediate', 'Advanced', 'Pro'];
 export const PickUpForm: React.FC = () => {
-    const [sport, setSport] = useState('soccer');
-    const [format, setFormat] = useState('5v5');
-    const [location, setLocation] = useState('Local Park');
-    const [datetime, setDatetime] = useState<Date | null>(new Date());
-    const [skillLevel, setSkillLevel] = useState('Beginner');
-    const [activeButton, setActiveButton] = useState<string | null>(null);
+  const [sport, setSport] = useState('soccer');
+  const [format, setFormat] = useState('5v5');
+  const [location, setLocation] = useState('Local Park');
+  const [datetime, setDatetime] = useState<Date | null>(new Date());
+  const [skillLevel, setSkillLevel] = useState('Beginner');
+  const [activeButton, setActiveButton] = useState<string | null>(null);
 
-    const handleButtonClick = (button: string) => {
-        setActiveButton(button);
-        setSkillLevel(button);
-    };
+  const handleButtonClick = (button: string) => {
+    setActiveButton(button);
+    setSkillLevel(button);
+  };
 
-    const handleSportChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        setSport(event.target.value);
-    };
+  const handleSportChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setSport(event.target.value);
+  };
 
-    const handleFormatChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        setFormat(event.target.value);
-    };
+  const handleFormatChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setFormat(event.target.value);
+  };
 
-    const handleLocationChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        setLocation(event.target.value);
-    };
+  const handleLocationChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setLocation(event.target.value);
+  };
 
-    
-    const handleDatetimeChange = (date: Date | [Date, Date] | null) => {
-        setDatetime(date as Date); 
-      };
 
-    const handleEdit = () => {
-        console.log('Edit button clicked');
-    };
+  const handleDatetimeChange = (date: Date | [Date, Date] | null) => {
+    setDatetime(date as Date);
+  };
 
-    const handleSend = () => {
-        console.log('Send button clicked');
-    };
+  const handleEdit = () => {
+    console.log('Edit button clicked');
+  };
 
-    return (
-     <div className={styles.container}>
+  const handleSend = () => {
+    console.log('Send button clicked');
+  };
+
+  return (
+    <div className={styles.container}>
       <div className={styles.tableContainer}>
         <div className={styles.title}>Organise Match</div>
         <div className={styles.subtitle}>Create a new pickup match</div>
-        
+
         <div className={styles.field}>
           <label className={styles.fieldLabel} htmlFor="sportSelect">Sport</label>
           <select id="sportSelect" className={styles.select} onChange={handleSportChange} value={sport}>
@@ -60,7 +61,7 @@ export const PickUpForm: React.FC = () => {
             {/* Add more sports as needed */}
           </select>
         </div>
-        
+
         <div className={styles.field}>
           <label className={styles.fieldLabel} htmlFor="formatSelect">Select format of play</label>
           <select id="formatSelect" className={styles.select} onChange={handleFormatChange} value={format}>
@@ -68,74 +69,70 @@ export const PickUpForm: React.FC = () => {
             <option value="7v7">7v7</option>
             <option value="11v11">11v11</option>
             {/* Add more formats as needed */}
-           </select>
-        </div> 
-        
+          </select>
+        </div>
+
         <div className={styles.field}>
           <label className={styles.fieldLabel} htmlFor="locationSelect">Location</label>
           <select id="locationSelect" className={styles.select} onChange={handleLocationChange} value={location}>
             <option value="Local Park">Local Park</option>
             <option value="Sports Complex">Sports Complex</option>
-            <option value="School Field">School Field</option> 
+            <option value="School Field">School Field</option>
             {/* Add more locations as needed */}
-           </select>
+          </select>
         </div>
-        
+
         <div className={styles.field}>
           <label className={styles.fieldLabel} htmlFor="datetimeSelect">Day and Time</label>
           <div className={styles.select}>
-          <DatePicker
-            selected={datetime}
-            onChange={handleDatetimeChange}
-            showTimeSelect
-            dateFormat="MMMM /d /yyyy | h:mm aa"
-            className={styles.datepicker}           
-          />
+            <DatePicker
+              selected={datetime}
+              onChange={handleDatetimeChange}
+              showTimeSelect
+              dateFormat="MMMM /d /yyyy | h:mm aa"
+              className={styles.datepicker}
+            />
           </div>
         </div>
-       
+
         <label className={styles.fieldLabel} htmlFor="datetimeSelect">Select sports skill level</label>
         <div className={styles.buttonsContainer}>
-          {['Never played before', 'Beginner', 'InterMediate', 'Advanced', 'Pro'].map((button, index) => (
+          {level.map((button, index) => (
             <div key={index} className={`${styles.buttonWrapper} ${activeButton === button ? styles.active : ''}`}>
-              {activeButton === button && <CheckIcon className={styles.tickIcon} sx={{ fontSize: 16 }}/>}
+              {activeButton === button && <CheckIcon className={styles.tickIcon} sx={{ fontSize: 16 }} />}
               <button
                 className={`${styles.button} ${activeButton === button ? styles.activeButton : ''}`}
                 onClick={() => handleButtonClick(button)}
               >
                 {button}
               </button>
-              
             </div>
           ))}
-          
+
         </div>
 
-        <div  className={styles.createbutton}>
-        <CommonButton label='create'/>
+        <div className={styles.createbutton}>
+          <CommonButton label='create' />
         </div>
-        
-      </div> 
+
+      </div>
       <div className={styles.divider} />
-
-<div className={styles.rightPanel}>
-      <div className={styles.card}>
-      <h3 style={{color:"white"}}>Your Organised Match</h3>
-
-      <CommonCard 
-        sport={sport}
-        format={format}
-        location={location}
-        datetime={datetime ? datetime.toLocaleString() : ''}
-        skillLevel={skillLevel}
-        onEdit={handleEdit}
-        onSend={handleSend}
-      />
+          <div className={styles.card_Last}>
+      <div>   
+          <CommonCard
+            sport={sport}
+            format={format}
+            location={location}
+            datetime={datetime ? datetime.toLocaleString() : ''}
+            skillLevel={skillLevel}
+            onEdit={handleEdit}
+            onSend={handleSend}
+          />
+        </div>
+        </div>
       </div>
-      </div>
-     </div> 
+   
   );
 };
 
-// export default PickUpForm;
 

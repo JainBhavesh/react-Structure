@@ -1,21 +1,14 @@
 .custom-card {
-    max-width: 345px;
-    margin: 20px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
+    width: 25rem;
+    height: 20rem;
+    border-radius: 1rem;
 
     .header {
         background-color: #D1FFBD;
-        padding: 16px;
+        padding: 1rem;
         color: black;
-        display: flex;
-        flex-direction: column;
-        margin: 15px;
-        border-radius: 15px;
+        margin: 2rem;
+        border-radius: 1rem;
 
         .title {
             margin: 0;
@@ -38,11 +31,6 @@
             color: green;
         }
     }
-
-    .content {
-        padding: 10px;
-    }
-
     .MuiCardActions-root {
         display: flex;
         justify-content: space-around;
@@ -52,5 +40,15 @@
             text-transform: capitalize;
             width: 100%;
         }
+    }
+}
+.card-header{
+    text-align: center;
+    color: white;
+    margin-top: 8rem;
+}
+@media(max-width:990px){
+    .custom-card {
+        margin: .2rem;
     }
 }

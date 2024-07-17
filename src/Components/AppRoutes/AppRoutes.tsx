@@ -2,17 +2,26 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Dashboard } from "../Dashboard/Dashboard";
 import Protected from "./Protected";
 import { Login } from "../Login/Login";
-import { CommonButton } from "../../Common/Button/CommonButton";
-import { CommonCard } from "../../Common/Cards/CommonCard";
 import { RouteErrorPage } from "../../Common/RouteErrorPage/RouteErrorPage";
 import { OtpVerify } from "../Dashboard/OtpVerification/OtpVerify";
-import { PickUpForm } from "../../Common/PickupMatchForm/PickUpForm";
+import { PickUpForm } from "../Dashboard/PickupMatchForm/PickUpForm";
 import Sidebar from "../../Common/Sidebar/Sidebar";
 import Getotp from "../Dashboard/GetOTP/Getotp";
-import CreateProfile from "../Dashboard/Create Profile/Cretateprofile";
 import SubscriptionCard from "../Dashboard/SubscriptionCard/SubscriptionCard";
+import GetOtp from "../Dashboard/GetOTP/Getotp";
+import PageHeader from "../../Common/PageHeader/PageHeader";
+import { useState } from "react";
+import CreateProfile from "../Dashboard/CreateProfile/CretateProfile";
 
 const AppRoutes = () => {
+  const [open, setOpen] = useState<boolean>(false);
+  const isShowSidebar = () => {
+    const path = window.location.pathname;
+    return path === '/' || path === '/getotp' || path === '/otpverify';
+  }
+  const toggleDrawer = () => {
+    setOpen(!open);
+  };
   const handleEdit = () => {
     // Handle edit action
     console.log('Edit clicked');
@@ -23,24 +32,16 @@ const AppRoutes = () => {
     console.log('Send clicked');
   };
   return (
-    <Router>
-      <Routes>
-        <Route path="*" element={<RouteErrorPage />} />
-        <Route path="/" Component={() => <Login />} />
-        <Route path="/commoncard"  element={
-            <CommonCard
-              sport=" Pickleball"
-              format=" 1v1"
-              location=" http://example.com"
-              datetime=" 23/8/2024 | 08.00pm"
-              skillLevel=" Beginner"
-              onEdit={handleEdit}
-              onSend={handleSend}
-            />
-          }  />
+    <>
+      {!isShowSidebar() && <Sidebar open={open} toggleDrawer={toggleDrawer} />}
+      {!isShowSidebar() && <PageHeader toggleDrawer={toggleDrawer} />}
+      <Router>
+        <Routes>
+          <Route path="*" element={<RouteErrorPage />} />
+          <Route path="/" Component={() => <Login />} />
+          <Route path="getotp" Component={() => <GetOtp />} />
           <Route path="/otpverify" element={<OtpVerify />} />
-          <Route path="sidebar" Component={() => <Sidebar />} />
-          <Route path="getotp" Component={() => <Getotp />} />
+          <Route path="/createprofile" element={<CreateProfile />} />
           <Route path="/pickupform" Component={() => <PickUpForm />} />
           <Route path="/subscription" Component={() => <SubscriptionCard />} />
 
@@ -55,6 +56,7 @@ const AppRoutes = () => {
         />
       </Routes>
     </Router>
+    </>
   );
 };
 
