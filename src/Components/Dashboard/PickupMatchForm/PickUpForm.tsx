@@ -117,7 +117,7 @@ export const PickUpForm: React.FC = () => {
 
       </div>
       <div className={styles.divider} />
-
+          <div className={styles.card_Last}>
       <div>   
           <CommonCard
             sport={sport}
@@ -128,6 +128,7 @@ export const PickUpForm: React.FC = () => {
             onEdit={handleEdit}
             onSend={handleSend}
           />
+        </div>
         </div>
       </div>
    

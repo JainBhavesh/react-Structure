@@ -6,19 +6,18 @@ import { RouteErrorPage } from "../../Common/RouteErrorPage/RouteErrorPage";
 import { OtpVerify } from "../Dashboard/OtpVerification/OtpVerify";
 import { PickUpForm } from "../Dashboard/PickupMatchForm/PickUpForm";
 import Sidebar from "../../Common/Sidebar/Sidebar";
-import GetOtp from "../Dashboard/GetOtp/GetOtp";
-import { useState } from "react";
+import SubscriptionCard from "../Dashboard/SubscriptionCard/SubscriptionCard";
 import PageHeader from "../../Common/PageHeader/PageHeader";
+import { useState } from "react";
 import CreateProfile from "../Dashboard/CreateProfile/CretateProfile";
-
-const isShowSidebar = () => {
-  const path = window.location.pathname;
-  return path === '/' || path === '/getotp' || path === '/otpverify';
-}
+import GetOtp from "../Dashboard/GetOtp/GetOtp";
 
 const AppRoutes = () => {
   const [open, setOpen] = useState<boolean>(false);
-
+  const isShowSidebar = () => {
+    const path = window.location.pathname;
+    return path === '/' || path === '/getotp' || path === '/otpverify';
+  }
   const toggleDrawer = () => {
     setOpen(!open);
   };
